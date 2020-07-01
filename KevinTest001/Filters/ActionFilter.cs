@@ -15,7 +15,7 @@ namespace KevinTest001.Filters
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            //context.Result = new ContextResult() { Content ="方法执行没有权限" };
+            //context.Result = new ContextResult() { Content ="方法执行没有权限" }；
         }
     }
 }
