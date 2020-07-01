@@ -19,9 +19,19 @@
     </html>
 *@
 
+
+
 @{
     ViewBag.Title = "首页";
 }
+
+<!-- asp.net core 静态文件的保护机制，不能，直接用，需要在Startup中启用-->
+<script src="~/js/site.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+
+<!--这个部使用特殊处理也不能访问-->
+<img src="~/Images/1.png" />
+
 
 <!--这个返回的是一个页面  ,一个字符串  abc是目录下的html-->
 @*@Html.Partial("abc") *@
