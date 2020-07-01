@@ -15,6 +15,8 @@ namespace KevinTest001
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //#Kevin 添加一些服务 把和MVC相关的服务都添加一下
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -24,6 +26,9 @@ namespace KevinTest001
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //#Kevin 添加路由，让程序能找到控制器、找到方法、找到   默认路由，什么都不输入的时候找home的index方法
+            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) =>
             {

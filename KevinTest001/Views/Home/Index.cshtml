@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!--页面返回的内容放在Model中-->
+@*- @model int -->  *@
+
+<!--引用Model的命名空间 -->
+@model KevinTest001.Models.UserModel
+<!-- <h1>您好！</h1>       //#Kevin 空白的html可以这么写  -->
+@*<html>         #Kevin之前写的那个可以不这么写了，用View
+    <head>
+
+    </head>
+    <body>
+        <h1>您好!@Model.Name,@ViewBag.sex</h1>
+    </body>
+    </html>
+*@
+
+@{
+    ViewBag.Title = "首页";
+}
+
+<!--这个返回的是一个页面  ,一个字符串  abc是目录下的html-->
+@*@Html.Partial("abc") *@
+@*@Html.Partial("abc",Model)*@
+
+<!--这个没成功下面的-->
+@*@Html.Partial("abc", new Person() { name = "李四" })*@
+@Html.Partial("abc", 1)
+
+<!--执行返回的一个方法的话就要放在这个 花括号里面，response返回的内容里面，建议使用这个，性能好-->
+@{
+    // Html.RenderPartial("abc");
+}
+
+<!--以前还有一种利用action找到controller中返回的view的方法现在不用了-->
+@*@Html.ActionLink()*@
+
+<!--不是从页面加载而是从数据库或者什么出来的-->
+@await Component.InvokeAsync("Abc")
