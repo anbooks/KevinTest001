@@ -19,11 +19,22 @@ namespace KevinTest001.Controllers
         //#Kevin 添加短路
         [ResourceFilter]
 
+        //#Kevin 添加Action过滤器
+       // [ActionFilter]
 
+         //异常过滤器
+         [ExceptionFilter]
+
+         //#Kevin 想让过滤器能获取名字的话就需要这里授权名字
+         [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
 
         //#Kevin 建立一个方法 ,返回视图
         public IActionResult Index()
         {
+            //#Kevin 抛出异常
+            throw new Exception("发生错误");
+
+
             // return Content("您好！");
             //------------------------------------
             //#Kevin 先找/Views/Home/Index.cshtml

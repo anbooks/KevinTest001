@@ -17,9 +17,13 @@ namespace KevinTest001.Filters
 
         public void OnResourceExecuting(ResourceExecutingContext context)
         {
-            string  token = context.HttpContext.User.FindFirstValue(ClaimTypes.Sid);  //#kevin 这里没有值
+            //测试别的时候这个地方注释一下，要不就短路了
 
+            /*
+             * string  token = context.HttpContext.User.FindFirstValue(ClaimTypes.Sid);  //#kevin 这里没有值
+           
             context.Result =new ContentResult() {Content="结束执行"};
+            */
         }
 
     }

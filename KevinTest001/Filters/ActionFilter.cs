@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace KevinTest001.Filters
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            //context.Result = new ContextResult() { Content ="方法执行没有权限" }；
+           // context.Result = new ContentResult() { Content = "方法执行没有权限" };
         }
     }
 }
