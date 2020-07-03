@@ -29,9 +29,9 @@ namespace KevinTest001.Controllers
 
         private IService _service;
 
-        private MyDbContent _myDbContext;
+        private MyDbContext _myDbContext;
         //public DIController(IService service)
-        public DIController(IService service,MyDbContent myDbContent)
+        public DIController(IService service,MyDbContext myDbContent)
         {
             this._service = service;
             this._myDbContext = myDbContent;

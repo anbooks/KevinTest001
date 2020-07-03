@@ -68,7 +68,7 @@ namespace KevinTest001
             services.AddSingleton<IService, OService>();
 
             //ORM 添加数据库连接操作  ,右键，NUt管理，浏览，efcore，选择版本可能不同  2.2.0本项目安装的
-            services.AddDbContextPool<MyDbContent>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContextPool<MyDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
